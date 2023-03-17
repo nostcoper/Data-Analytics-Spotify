@@ -1,0 +1,3 @@
+CLIENT_ID = 'f05c926d1d644bc8b3662d47f1849af2'
+CLIENT_SECRET = 'a5f317ba9d8847538d89949bb3218592'
+RE_DIRECT_URI = 'https://open.spotify.com'
