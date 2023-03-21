@@ -1,9 +1,23 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from tokens import *
+import json
 
+sp = None
 
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id = CLIENT_ID, client_secret = CLIENT_SECRET, redirect_uri = RE_DIRECT_URI))
+def authorization(client_id, client_secret, redirect_uri):
+    global sp
+    try:
+        sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id, client_secret, redirect_uri , scope= 'user-library-read'))
+        user = sp.current_user()
+        return True, user['display_name']
+    except:
+        return False, ""
 
-user = sp.current_user()
+def get_user_info():
+    global sp
+    with open('current_user.json', 'w') as archivo:
+        json.dump(sp.current_user(), archivo, indent=4)
 
+    with open('current_user_saved_albums.json', 'w') as archivo:
+        json.dump(sp.current_user_saved_albums(), archivo, indent=4)
