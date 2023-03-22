@@ -38,3 +38,5 @@ def mostrar_albumes_artista(codigo_artista):
 
     for album in albums:
         print(album['name'])
+
+print(sp.user('Valeria'))
