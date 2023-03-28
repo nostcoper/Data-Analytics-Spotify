@@ -2,6 +2,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import json
 
+sp = None
 SCOPE = ['user-library-read']
 
 def authorization(client_id, client_secret, redirect_uri):
@@ -15,9 +16,9 @@ def authorization(client_id, client_secret, redirect_uri):
     except:
         return False, ""
 
-def get_user_info():
+def get_user_info()->None:
     global sp
-    with open('current_user.json', 'w') as archivo:
+    with open('user-json/current_user.json', 'w') as archivo:
         json.dump(sp.current_user(), archivo, indent=4)
 
     with open('current_user_saved_albums.json', 'w') as archivo:
