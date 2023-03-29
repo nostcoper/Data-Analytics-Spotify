@@ -1,6 +1,5 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-from tokens import *
 import json
 
 sp = None
@@ -10,7 +9,9 @@ def authorization(client_id, client_secret, redirect_uri):
     try:
         sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id, client_secret, redirect_uri , scope= 'user-library-read'))
         user = sp.current_user()
+        get_user_info()
         return True, user['display_name']
+        
     except:
         return False, ""
 
