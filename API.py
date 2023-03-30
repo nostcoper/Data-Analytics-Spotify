@@ -1,7 +1,7 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import json
-
+from tokens import *
 sp = None
 SCOPE = ['user-library-read','user-top-read','user-read-recently-played']
 
