@@ -1,2 +1,4 @@
 venv/
 __pycache__/
+__pycache__/API.cpython-310.pyc
+__pycache__/tokens.cpython-310.pyc
