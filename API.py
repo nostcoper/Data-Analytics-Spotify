@@ -24,25 +24,22 @@ def get_user_info()->None:
     with open('current_user_saved_albums.json', 'w') as archivo:
         json.dump(sp.current_user_saved_albums(), archivo, indent=4)
 
-def get_recently_played_songs_json()->None:
+#gets recently played songs from the user and returns a dict with the  API data 
+def get_recently_played_songs_json()->dict:
     global sp
-    with open('user-json/recently_played_songs.json', 'w') as archivo:
-        json.dump(sp.current_user_recently_played(50), archivo, indent=4)
+    return sp.current_user_recently_played(50)
 
-def get_user_top_artists()->None:
+#gets user top artists from the user and returns a dict with the  API data
+def get_top_artists_json()->dict:
     global sp
-    with open('user-json/user_top_artists.json', 'w') as archivo:
-        json.dump(sp.current_user_top_artists(50,5,"long_term"), 
-                  archivo, indent=4)
+    return sp.current_user_top_artists(50,5,"long_term")
 
-def get_user_top_tracks()->None:
+#gets user top tracks from the user and returns a dict with the  API data
+def get_top_tracks_json()->dict:
     global sp
-    with open('user-json/user_top_tracks.json', 'w') as archivo:
-        json.dump(sp.current_user_top_tracks(50,5,"long_term"), 
-                  archivo, indent=4)
+    return sp.current_user_top_tracks(50,5,"long_term")
 
-def get_user_liked_tracks()->None:
+#gets user liked tracks from the user and returns a dict with the  API data
+def get_saved_tracks_json()->dict:
     global sp
-    with open('user-json/user_liked_tracks.json', 'w') as archivo:
-        json.dump(sp.current_user_saved_tracks(50,5), 
-                  archivo, indent=4)
+    return sp.current_user_saved_tracks(50,5)
