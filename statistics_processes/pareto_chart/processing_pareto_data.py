@@ -17,7 +17,7 @@ def add_cumulative_percentaje_column(df:pd.DataFrame)->pd.DataFrame:
 
 #create a pareto chart from the pandas dataframe
 def create_pareto_chart(df:pd.DataFrame)->None:
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(12, 8))
     ax.bar(df['Artist'], df['Count'], color='C0')
     ax.set_ylabel('Count')
     ax.set_xlabel('Artists')
@@ -25,5 +25,5 @@ def create_pareto_chart(df:pd.DataFrame)->None:
     ax2.plot(df['Artist'], df['Cumulative Percentaje'], color='C1', marker='D', ms=7)
     ax2.yaxis.set_major_formatter(PercentFormatter())
     ax2.set_ylabel('Cumulative Percentaje')
-    plt.xticks(rotation=90)
+    plt.setp(ax.get_xticklabels(), rotation=90, ha='right')
     plt.show()
