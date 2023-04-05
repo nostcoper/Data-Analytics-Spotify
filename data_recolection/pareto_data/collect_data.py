@@ -5,8 +5,19 @@ def get_top_artists_dict(top_artists_json:dict)->dict:
         top_artists_dict[artist['name']] = 0
     return top_artists_dict
 
-#gets a JSON from the API and counts the artists in the JSON and adds them to the top artists dict
-def count_artists_in_json(top_artists_dict:dict, json:dict)->dict:
+#counts artists in the API top tracks JSON and returns a dict with the artist name and the count
+def count_artists_in_top_tracks_json(top_artists_dict:dict, json:dict)->dict:
+    for item in json['items']:
+        for artist in item['artists']:
+            try:
+                top_artists_dict[artist['name']] += 1
+            except KeyError:
+                continue
+    return top_artists_dict
+
+
+#counts artists in the API recently played JSON and returns a dict with the artist name and the count
+def count_artists_in_recently_played_json(top_artists_dict:dict, json:dict)->dict:
     for item in json['items']:
         for artist in item['track']['artists']:
             try:
