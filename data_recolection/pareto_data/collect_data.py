@@ -17,7 +17,7 @@ def count_artists_in_top_tracks_json(top_artists_dict:dict, json:dict)->dict:
 
 
 #counts artists in the API recently played JSON and returns a dict with the artist name and the count
-def count_artists_in_recently_played_json(top_artists_dict:dict, json:dict)->dict:
+def count_artists_in_recently_played_or_saved_tracks_json(top_artists_dict:dict, json:dict)->dict:
     for item in json['items']:
         for artist in item['track']['artists']:
             try:
