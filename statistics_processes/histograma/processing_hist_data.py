@@ -1,16 +1,17 @@
 import random
 import numpy as np
 import matplotlib.pyplot as plt
-from API import *
 
 def trigger_hist_from_tuples(tuples_list):
+
     # diccionario para contar la frecuencia de cada valor
     freq_dict = {}
     for item in tuples_list:
-        if item[0] not in freq_dict:
-            freq_dict[item[0]] = 1
+        if item not in freq_dict:
+            freq_dict[item] = 1
         else:
-            freq_dict[item[0]] += 1
+            freq_dict[item] += 1
+
 
     # listas para almacenar los nombres y las frecuencias
     names = []
@@ -26,8 +27,11 @@ def trigger_hist_from_tuples(tuples_list):
         names.append(key)
         frequencies.append(value)
 
+    lista=[]
     # crear el histograma
-    plt.bar(names, frequencies, color=colors)
+    for  name in names:
+        lista.append(name[0])
+    plt.bar(lista, frequencies, color=colors)
     plt.xticks(rotation=90)
     plt.ylabel('Frecuencia')
     plt.xlabel('Canciones')
@@ -52,8 +56,3 @@ def trigger_heatmap_from_tuples(tuples_list):
     plt.ylabel('Frecuencia')
     plt.colorbar()
     plt.show()
-
-
-recently_played = get_recently_played_songs(50)
-top_tracks = get_user_top_tracks(20)
-trigger_hist_from_tuples(recently_played)
