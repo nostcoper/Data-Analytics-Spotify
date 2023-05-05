@@ -4,7 +4,7 @@ from statistics_processes.making_line_chart import *
 from API import *
 
 set_page_config()
-set_second_pages_title()
+set_second_pages_title(sp)
 
 st.header('Grafica de popularidad de tus 15 canciones más escuchadas')
 data = trigger_line_chart()
