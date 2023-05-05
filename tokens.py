@@ -1,3 +1,3 @@
-CLIENT_ID = 'Your client id'
-CLIENT_SECRET = 'Your client secret'
-REDIRECT_URI = 'Your redirect uri'
+CLIENT_ID = ''
+CLIENT_SECRET = ''
+REDIRECT_URI = ''

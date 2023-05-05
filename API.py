@@ -43,3 +43,5 @@ def get_top_tracks_json()->dict:
 def get_saved_tracks_json()->dict:
     global sp
     return sp.current_user_saved_tracks(50,5)
+
+authorization(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
