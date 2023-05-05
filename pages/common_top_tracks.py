@@ -5,7 +5,7 @@ from API import *
 from statistics_processes.common_tracks import *
 
 set_page_config()
-set_second_pages_title()
+set_second_pages_title(sp)
 
 col1, col2, col3 = st.columns(3)
 with col1:

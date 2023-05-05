@@ -2,10 +2,10 @@ import streamlit as st
 from page_config import set_page_config, set_second_pages_title
 from streamlit_extras.switch_page_button import switch_page
 from data_recolection.data_common_tracks import *
-from API import *
+from API import sp
 
 set_page_config()
-set_second_pages_title()
+set_second_pages_title(sp)
 
 common_top_tracks = 'Si mis canciones más escuchadas están en el top 50 de Colombia o global'
 to_show_line_shart = 'Ver la grafica de popularidad de tus 15 canciones más escuchadas'
