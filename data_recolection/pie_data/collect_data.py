@@ -1,7 +1,7 @@
 #gets the API top artists data as a dict and returns a dict with the artist name and a default value of 0
 def get_top_artists_dict(top_artists_json:dict)->dict:
     top_artists_dict = {}
-    for artist in top_artists_json['items']:
+    for artist in top_artists_json['items'][:10]:
         top_artists_dict[artist['name']] = 0
     return top_artists_dict
 
