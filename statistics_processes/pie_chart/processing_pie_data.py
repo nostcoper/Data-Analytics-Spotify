@@ -1,27 +1,24 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib.ticker import PercentFormatter
+import altair as alt
 
 
-def __get_cumulative_percentage(artists_dict: dict) -> tuple:
+def __get_cumulative_percentage(artists_dict: dict) -> pd.DataFrame:
     df = pd.DataFrame(artists_dict.items(), columns=['artist', 'count']).sort_values(by=['count'], ascending=False)
     df['percentage'] = (df['count']/ df['count'].sum() * 100).round(2)
-    print(df)
-    return (df['artist'].tolist()[:5], df['percentage'].tolist()[:5])
+    df.drop('count', inplace=True)
+    return df
 
-#Creates a figure and an axis and returns them
-def __create_figure_and_axis() -> tuple:
-    fig, ax = plt.subplots()
-    return (fig, ax)
+def __create_pie_chart(df: pd.DataFrame) -> alt.Chart:
+    chart = alt.Chart(df).mark_arc().encode(
+        theta='percentage',
+        color='artist',
+        tooltip=['artist', 'percentage']
+    )
+    return chart
 
-#Creates a pie chart and returns it
-def __create_pie_chart(ax:plt.Axes,artists: list, percentages: list):
-    ax.pie(percentages, labels=artists,explode=(0.1,0,0,0,0), autopct='%1.1f%%',
-           shadow=True, startangle=90)
-    ax.axis('equal')
 
-def creates_pie(artist_dict: dict)-> plt.Figure:
-    artists, percentages = __get_cumulative_percentage(artist_dict)
-    fig, ax = __create_figure_and_axis()
-    __create_pie_chart(ax, artists, percentages)
-    return fig
+def creates_pie(artist_dict: dict)-> alt.Chart:
+    df = __get_cumulative_percentage(artist_dict)
+    chart = __create_pie_chart(df)
+    return chart
+    
