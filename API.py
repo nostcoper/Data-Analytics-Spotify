@@ -10,7 +10,8 @@ def authorization(client_id, client_secret, redirect_uri):
     try:
         sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id, client_secret, redirect_uri , scope= SCOPE))
         user = sp.current_user()
-        return True, user['display_name']   
+        return True, user['display_name']
+        
     except:
         return False, ""
 
