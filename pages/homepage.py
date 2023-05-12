@@ -3,7 +3,7 @@ from API import sp, get_top_tracks_json
 from data_recolection.pareto_data.collect_data import *
 from API import *
 from components import items_with_image
-from data_recolection.pareto_data.data_common_tracks import top_50_global
+from data_recolection.pareto_data.data_common_tracks import top_50_global, top_50_colombia
 import os
 
 st.set_page_config(
@@ -41,5 +41,10 @@ count_artists_in_recently_played_or_saved_tracks_json(artist_dict, get_recently_
 artist_list, graph = st.columns(2)
 
 with artist_list:
-    st.markdown(f'<p class="artist-list-title">Tus Artistas más escuchados</p>', unsafe_allow_html=True)
-    items_with_image(top_50_global())
+    st.markdown(f'<p class="artist-list-title">TOP 50 GLOBAL</p>', unsafe_allow_html=True)
+    with st.expander("Ver"):
+        items_with_image(top_50_global())
+
+    st.markdown(f'<p class="artist-list-title">TOP 50 COLOMBIA</p>', unsafe_allow_html=True)
+    with st.expander("Ver"):
+        items_with_image(top_50_colombia())
