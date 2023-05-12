@@ -2,22 +2,15 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 import pandas as pd
 from API import authorization
+from page_config import set_page_config, remove_margin_pages
 import numpy as np
 import os
 
-st.set_page_config(
-    page_title="Data Analytics Spotify",
-    page_icon="🧊",
-    layout="wide",
-    initial_sidebar_state="collapsed"
-)
-
+set_page_config()
 
 # Using "with" notation
 with st.sidebar:
     pass
-
-
 
 login = st.container()
 with login:
@@ -35,6 +28,7 @@ with login:
                        </div>''', unsafe_allow_html=True)
 
         if click_button:
+            #check_autorization, display_name = authorization('41496547b72b4bb293055ca32f73069c', 'c23c8e7a2a39428889be937501708a5e', 'http://localhost:8080')
             check_autorization, display_name = authorization('f05c926d1d644bc8b3662d47f1849af2', '30392342f26f4e688435ffbc80639ee1', 'http://localhost:8080')
             #check_autorization, display_name = authorization(client_id, client_secret, re_direct_url)
             

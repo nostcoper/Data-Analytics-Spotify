@@ -1,7 +1,9 @@
 import streamlit as st
-from API import authorization, sp, get_top_tracks_json
+from API import sp, get_top_tracks_json
 from data_recolection.pareto_data.collect_data import *
 from API import *
+from components import items_with_image
+from data_recolection.pareto_data.data_common_tracks import top_50_global
 import os
 
 st.set_page_config(
@@ -40,7 +42,4 @@ artist_list, graph = st.columns(2)
 
 with artist_list:
     st.markdown(f'<p class="artist-list-title">Tus Artistas más escuchados</p>', unsafe_allow_html=True)
-    for artist in (artist_dict):
-        image = artist_dict[artist]['images'][0]['url']
-        name = artist_dict[artist]['name']
-        st.markdown(f'<div class= "artist-list">  <img class="image-artist-list" src="{image}"><h3>{name}</h3> </div>', unsafe_allow_html=True)
+    items_with_image(top_50_global())
