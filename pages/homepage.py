@@ -1,9 +1,11 @@
 import streamlit as st
-from API import sp, get_top_tracks_json
+from API import sp, get_top_tracks_json, get_top_artists_json, get_saved_tracks_json, get_recently_played_songs_json
 from data_recolection.pareto_data.collect_data import *
 from API import *
 from components import items_with_image
 from data_recolection.pareto_data.data_common_tracks import top_50_global, top_50_colombia
+from statistics_processes.pie_chart.processing_pie_data import creates_pie
+from data_recolection.pie_data.collect_data import collect_data_for_pie_chart
 import os
 
 st.set_page_config(
@@ -48,3 +50,9 @@ with artist_list:
     st.markdown(f'<p class="artist-list-title">TOP 50 COLOMBIA</p>', unsafe_allow_html=True)
     with st.expander("Ver"):
         items_with_image(top_50_colombia())
+
+with graph:
+    artist_dict = collect_data_for_pie_chart(get_top_artists_json(), get_top_tracks_json(), get_recently_played_songs_json(), get_saved_tracks_json())
+    st.write(artist_dict)
+    st.write(creates_pie(artist_dict))
+

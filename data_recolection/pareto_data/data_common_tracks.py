@@ -25,8 +25,6 @@ def user_top_tracks() -> dict:
         songs[item['name']] = info
     return songs
 
-    
-
 def top_50_colombia() -> dict:
     tracks_colombia = sp.playlist('37i9dQZEVXbOa2lmxNORXQ')['tracks']['items']
     popularity = create_dict_top_tracks(tracks_colombia)
