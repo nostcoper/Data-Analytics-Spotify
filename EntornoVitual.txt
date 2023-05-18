@@ -8,7 +8,7 @@ Para abrir el entorno virtual:
 - venv\Scripts\activate.bat
 
 Ruta carpeta:
-cd ""C:\Users\ASUS\Desktop\ProyectosPython\DataSpotify""
+cd "C:\Users\ASUS\Desktop\2023-1\Electiva de programación\Data-Analytics-Spotify"
 
 Markdown cheat sheet:
 https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet

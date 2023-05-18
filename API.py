@@ -23,5 +23,8 @@ def get_recently_played_songs_json()->dict:
     global sp
     return sp.current_user_recently_played(50)
 
+def get_track(id) -> dict:
+    global sp
+    return sp.track(id)
 
 authorization(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
