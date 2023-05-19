@@ -45,7 +45,8 @@ with side_left:
             switch_page("common tracks")
     
     with B:
-        st.write("A")   
+       pass
+
 
     C, separate ,D = st.columns([15,1,15])
     with A:
