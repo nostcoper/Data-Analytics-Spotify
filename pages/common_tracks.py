@@ -25,7 +25,7 @@ margins_css = """
         .main > div {
             padding-left: 7rem;
             padding-right: 7rem;
-            padding-top: 2rem;
+            padding-top: 1rem;
         }
     </style>
 """
