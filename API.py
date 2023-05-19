@@ -27,4 +27,8 @@ def get_track(id) -> dict:
     global sp
     return sp.track(id)
 
+def get_album(album_id) -> dict:
+    global sp
+    return sp.album(album_id)
+
 authorization(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
