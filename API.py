@@ -35,6 +35,6 @@ def get_saved_tracks_json()->dict:
     global sp
     return sp.current_user_saved_tracks(50,5)
 
-def get_recommendations_json(artists_ids:list, artists_genres:list, tracks_ids:list,limit:int)->dict:
+def get_recommendations_json(artists_ids:list, tracks_ids:list,limit:int)->dict:
     global sp
-    return sp.recommendations(seed_artists=artists_ids, seed_genres=artists_genres, seed_tracks=tracks_ids, limit=limit)
+    return sp.recommendations(seed_artists=artists_ids, seed_tracks=tracks_ids, limit=limit)
