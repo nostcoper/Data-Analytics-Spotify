@@ -28,7 +28,7 @@ def get_top_artists_json()->dict:
 #gets user top tracks from the user and returns a dict with the  API data
 def get_top_tracks_json()->dict:
     global sp
-    return sp.current_user_top_tracks(50,5,"long_term")
+    return sp.current_user_top_tracks(50, 5,"long_term")
 
 #gets user liked tracks from the user and returns a dict with the  API data
 def get_saved_tracks_json()->dict:

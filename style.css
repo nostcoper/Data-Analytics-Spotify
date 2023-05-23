@@ -1,7 +1,9 @@
 .message-home {
     text-align: center;
-    font-size:40px !important;
+    font-size:60px !important;
     font-weight: bold;
+    background-color: #20d464;
+    margin-bottom: 70px;
 }
 
 .container-image-home{
@@ -10,5 +12,125 @@
 }
 
 .image-home{
-    width: 330px;
+    width: 250px;
 }
+
+
+.container-image-home{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-common{
+    width: 150px;
+}
+
+.image-artist-list{
+    width: 100px;
+    padding-right: 10px;
+    padding-left: 40px;
+    border-radius: 5%;
+}
+
+.name-artist-list{
+    text-align: left;
+
+}
+
+.element-artist-list {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.artist-list {
+    padding: 0px;
+    top: 0px;
+    width: 100%;
+    max-height: 180px; 
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0c0e1400;
+    overflow: auto; 
+    margin-bottom: 10px;
+}
+
+.artist-list-title {
+    padding-bottom: 0px;
+    width: 500px;
+    padding-left: 40px;
+    text-align: left;
+    font-size:30px !important;
+    font-weight: bold;
+}
+
+.common-message {
+    padding-bottom: 0px;
+    width: 100%;
+    text-align: center;
+    font-size:20px !important;
+    margin-bottom: 0px;
+}
+
+.artist-list-common {
+    display: flex;
+    align-items: center;
+    background-color: gray;
+    height: 50px;
+    margin-bottom: 5px;
+    margin-bottom: 0px;
+    width: 100%;
+    justify-content: center; 
+    text-align: center;
+    font-size:20px !important;
+    font-weight: bold;
+}
+
+.artist-list-top-global{
+    margin-bottom: 0px;
+    background-color: rgb(53, 130, 202);
+    width: 100%;
+    margin-bottom: 0px;
+    padding-left: 40px;
+    text-align: left;
+    font-size:30px !important;
+    font-weight: bold;
+}
+
+.artist-list-top-colombia{
+    margin-bottom: 0px;
+    background-color: rgb(207, 158, 12);
+    width: 100%;
+    padding-bottom: 0px;
+    padding-left: 40px;
+    text-align: left;
+    font-size: 30px !important;
+    font-weight: bold;
+}
+
+.artist-list-top-current{
+    margin-bottom: 0px;
+    background-color: #20d464;
+    width: 100%;
+    padding-bottom: 0px;
+    padding-left: 40px;
+    text-align: left;
+    font-size:30px !important;
+    font-weight: bold;
+}
+  
+.separate {
+    height: 0;
+    padding-bottom: 13%;
+}
+
+  div[data-testid="stExpander"]{
+    background-color: rgb(170, 170, 170);
+    border-radius: 10px;
+  }
+

@@ -4,4 +4,5 @@
 	
 		pip install spotipy
 		pip install streamlit
-		python -m streamlit run gui.py
+		pip install streamlit-extras
+		python -m streamlit run login.py
