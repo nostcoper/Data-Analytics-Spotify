@@ -2,6 +2,7 @@ import streamlit as st
 import os
 from API import *
 from streamlit_extras.switch_page_button import switch_page
+import time
 
 st.set_page_config(
     page_title="Data Analytics Spotify",
@@ -26,8 +27,13 @@ margins_css = """
 """
 
 st.markdown(margins_css, unsafe_allow_html=True)
+try:
+    display_name = sp.current_user()['display_name']
+except:
+    st.error("No se ha podido conectar con Spotify, por favor inicia sesión nuevamente")
+    time.sleep(5)
+    switch_page("login")
 
-display_name = sp.current_user()['display_name']
 st.markdown(f'<p class="message-home"> Bienvenido {display_name}</p>', unsafe_allow_html=True)
 
 side_left, separate ,side_right = st.columns([15,1,15])
