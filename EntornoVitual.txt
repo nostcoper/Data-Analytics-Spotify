@@ -1,0 +1,16 @@
+Para crear entorno virtual:
+1. Entrar a la carpeta desde el CMD
+2. py -m venv venv
+3. Abrir el entorno
+4. pip install -r requirements.txt
+
+Para abrir el entorno virtual:
+- venv\Scripts\activate.bat
+
+Ruta carpeta:
+cd "C:\Users\ASUS\Desktop\2023-1\Electiva de programación\Data-Analytics-Spotify"
+
+Markdown cheat sheet:
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+streamlit run login.py
