@@ -1,0 +1,58 @@
+div [data-testid="stVerticalBlock"]  [data-testid="stHorizontalBlock"] {
+    margin: 2%;
+    margin-top: 0px;
+}
+
+div[data-testid="column"] div[data-testid="column"] {
+    background-color: rgba(54, 53, 53, 1);
+    border-radius: 10px;
+    padding: 0.8%;
+    text-align: center;
+    margin-top: 0%;
+}
+
+div[data-testid="column"] {
+    background-color: rgba(37, 36, 36, 1);
+    border-radius: 10px;
+    padding-top: 1%;
+}
+
+
+div[data-testid="stButton"] {
+    background-color: rgba(37, 36, 36, 1);
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.message-menu{
+    font-size:40px !important;
+    font-weight: bold;
+    margin-left: 2%;
+    margin-top: 0px;
+}
+
+.image-menu{
+    width: 50%;
+    height: 50%;
+    padding-bottom: 1%; 
+    min-height: 160px;
+    border-radius: 10px;
+} 
+
+div.stButton > button:first-child {
+    font-size: 200px ;
+    background-color: rgba(54, 53, 53, 1);
+    width: 90%;
+    color:#ffffff;
+    font-weight: bold;
+}
+
+div [data-testid=stImage]{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+    padding-bottom: 1%; 
+}

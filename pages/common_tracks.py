@@ -1,12 +1,13 @@
+import os
 import streamlit as st
-from API import sp, get_top_tracks_json, get_top_artists_json, get_saved_tracks_json, get_recently_played_songs_json
-from data_recolection.pareto_data.collect_data import *
-from API import *
 from components import items_with_image
-from data_recolection.pareto_data.data_common_tracks import top_50_global, top_50_colombia, user_top_tracks, common_tracks
+from data_recolection.pareto_data.collect_data import *
 from statistics_processes.pie_chart.processing_pie_data import creates_pie
 from data_recolection.pie_data.collect_data import collect_data_for_pie_chart
-import os
+from API import sp, get_top_tracks_json, get_top_artists_json, get_saved_tracks_json, get_recently_played_songs_json
+from data_recolection.pareto_data.data_common_tracks import top_50_global, top_50_colombia, user_top_tracks, common_tracks
+
+
 
 st.set_page_config(
     page_title="Data Analytics Spotify",
@@ -29,8 +30,6 @@ margins_css = """
         }
     </style>
 """
-
-
 
 st.markdown(margins_css, unsafe_allow_html=True)
 
