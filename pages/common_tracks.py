@@ -7,6 +7,8 @@ from data_recolection.pareto_data.data_common_tracks import top_50_global, top_5
 from statistics_processes.pie_chart.processing_pie_data import creates_pie
 from data_recolection.pie_data.collect_data import collect_data_for_pie_chart
 import os
+import time
+from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(
     page_title="Data Analytics Spotify",
@@ -34,7 +36,12 @@ margins_css = """
 
 st.markdown(margins_css, unsafe_allow_html=True)
 
-artist_dict = get_top_artists_dict(get_top_artists_json())
+try:
+    artist_dict = get_top_artists_dict(get_top_artists_json())
+except:
+    st.error("No se ha podido conectar con Spotify, por favor inicia sesión nuevamente")
+    time.sleep(5)
+    switch_page("login")
 
 count_artists_in_top_tracks_json(artist_dict,  get_top_tracks_json())
 count_artists_in_recently_played_or_saved_tracks_json(artist_dict, get_recently_played_songs_json())
