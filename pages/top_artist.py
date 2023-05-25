@@ -24,7 +24,7 @@ st.markdown(f'<p class="message-popularity"> Gráfica tu top de artistas más es
 st.write("-----")
 col1, col2, col3 = st.columns(3)
 try:
-    data = collect_data_for_pie_chart(get_top_artists_json(), get_top_tracks_json(), get_recently_played_songs_json(), get_saved_tracks_json())
+    data = collect_data_for_pie_chart(get_top_artists_json(time_range="long_term"), get_top_tracks_json(), get_recently_played_songs_json(), get_saved_tracks_json())
 except:
     st.error("No se ha podido conectar con Spotify, por favor inicia sesión nuevamente")
     time.sleep(5)
