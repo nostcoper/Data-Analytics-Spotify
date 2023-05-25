@@ -10,6 +10,7 @@ def authorization(client_id, client_secret, redirect_uri):
     try:
         sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id, client_secret, redirect_uri , scope= SCOPE))
         user = sp.current_user()
+        sp.current_user_top_artists()
         return True, user['display_name']   
     except:
         return False, ""
@@ -18,6 +19,9 @@ def get_top_tracks_json(cant)->dict:
     global sp
     return sp.current_user_top_tracks(cant,5,"long_term")
 
+def get_top_artists_json(cant,time_range:str)->dict:
+    global sp
+    return sp.current_user_top_artists(cant,0,time_range)
 
 def get_recently_played_songs_json()->dict:
     global sp
