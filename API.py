@@ -29,6 +29,15 @@ def get_top_tracks_json()->dict:
     global sp
     return sp.current_user_top_tracks(50, 5,"short_term")
 
+
+def get_top_tracks_json_cloud(cant)->dict:
+    global sp
+    return sp.current_user_top_tracks(cant,5,"long_term")
+
+def get_top_artists_json_cloud(cant,time_range:str)->dict:
+    global sp
+    return sp.current_user_top_artists(cant,0,time_range)
+
 #gets user liked tracks from the user and returns a dict with the  API data
 def get_saved_tracks_json()->dict:
     global sp
