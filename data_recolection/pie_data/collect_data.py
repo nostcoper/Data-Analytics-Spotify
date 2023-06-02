@@ -26,10 +26,20 @@ def __count_artists_in_recently_played_or_saved_tracks_json(top_artists_dict:dic
                 continue
     return top_artists_dict
 
+def __remove_unheard_artists(top_artists_dict:dict):
+    top_artists_dict_aux = top_artists_dict.copy()
+    
+    for artist in top_artists_dict_aux.keys():
+        if top_artists_dict[artist] == 0:
+            del top_artists_dict[artist]
+    
+    return top_artists_dict
+
 def collect_data_for_pie_chart(top_artists_json:dict, top_tracks_json:dict,recently_played_json:dict,saved_tracks_json:dict)->dict:
     top_artists_dict = __get_top_artists_dict(top_artists_json)
     top_artists_dict = __count_artists_in_top_tracks_json(top_artists_dict, top_tracks_json)
     top_artists_dict = __count_artists_in_recently_played_or_saved_tracks_json(top_artists_dict, recently_played_json)
     top_artists_dict = __count_artists_in_recently_played_or_saved_tracks_json(top_artists_dict, saved_tracks_json)
+    top_artists_dict = __remove_unheard_artists(top_artists_dict)
 
     return top_artists_dict
