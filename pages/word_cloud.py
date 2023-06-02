@@ -6,6 +6,8 @@ from statistics_processes.pie_chart.processing_pie_data import creates_pie
 from data_recolection.pie_data.collect_data import collect_data_for_pie_chart
 from API import sp, get_top_tracks_json, get_top_artists_json, get_saved_tracks_json, get_recently_played_songs_json
 from statistics_processes.word_cloud.word_cloud_proccess import *
+from streamlit_extras.switch_page_button import switch_page
+import time
 
 st.set_page_config(
     page_title="Data Analytics Spotify",
@@ -23,7 +25,13 @@ st.markdown(f'<p class="message-popularity"> Nube de palabras de tus generos y m
 st.write("-----")
 col1, col2, col3 = st.columns(3)
 
-data = collect_data_for_pie_chart(get_top_artists_json(), get_top_tracks_json(), get_recently_played_songs_json(), get_saved_tracks_json())
+try:
+    data = collect_data_for_pie_chart(get_top_artists_json(), get_top_tracks_json(), get_recently_played_songs_json(), get_saved_tracks_json())
+except:
+    st.error("No se ha podido conectar con Spotify, por favor inicia sesión nuevamente")
+    time.sleep(5)
+    switch_page("login")
+    
 chart = creates_pie (data)
 with col2:
     genres = wordcloud_info()
