@@ -31,8 +31,7 @@ with login:
                 os.remove(".cache")
             except FileNotFoundError:
                 pass
-            check_autorization, display_name = authorization('f05c926d1d644bc8b3662d47f1849af2', '30392342f26f4e688435ffbc80639ee1', 'http://localhost:8080')
-            #check_autorization, display_name = authorization(client_id, client_secret, re_direct_url)
+            check_autorization, display_name = authorization(client_id, client_secret, re_direct_url)
             
             if check_autorization:
                 switch_page("homepage")
