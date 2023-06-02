@@ -63,6 +63,19 @@
     margin-bottom: 10px;
 }
 
+
+.artist-list-recommendation {
+    padding: 0px;
+    top: 0px;
+    width: 100%;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0c0e1400;
+    margin-bottom: 10px;
+}
+
 .artist-list-title {
     padding-bottom: 0px;
     width: 500px;

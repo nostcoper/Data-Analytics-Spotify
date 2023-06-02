@@ -2,8 +2,9 @@ import streamlit as st
 import os
 from API import *
 from streamlit_extras.switch_page_button import switch_page
-from data_recolection.recommendations.data_recommendations_collection import collect_data_for_recommendations
+from data_recolection.recommendations.data_recommendations_collection import user_recommendations
 from PIL import Image
+from components import items_with_image_recomendations
 import time
 
 st.set_page_config(
@@ -113,4 +114,4 @@ with menu:
                 switch_page("word cloud")
 
     with side_right:
-        st.write(collect_data_for_recommendations(get_top_artists_json(), get_top_tracks_json()))
+        items_with_image_recomendations(user_recommendations())
