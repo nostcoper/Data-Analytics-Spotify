@@ -28,15 +28,13 @@ with login:
                        </div>''', unsafe_allow_html=True)
         if click_button:
             try:
-                st.write("Borrando cache")
                 os.remove(".cache")
             except FileNotFoundError:
-                st.write("No se encontro el archivo")
+                pass
             check_autorization, display_name = authorization(client_id, client_secret, re_direct_url)
             
             if check_autorization:
                 switch_page("homepage")
             else:
-                st.error(display_name)
                 st.markdown('<p class="message-home"> Error de los datos</p>', unsafe_allow_html=True)
                 

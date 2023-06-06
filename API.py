@@ -11,7 +11,7 @@ def authorization(client_id, client_secret, redirect_uri):
         user = sp.current_user()
         return True, user['display_name']
     except:
-        return False, user
+        return False, ""
 
 #gets recently played songs from the user and returns a dict with the  API data 
 def get_recently_played_songs_json()->dict:
