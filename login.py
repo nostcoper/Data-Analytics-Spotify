@@ -28,9 +28,10 @@ with login:
                        </div>''', unsafe_allow_html=True)
         if click_button:
             try:
+                st.write("Borrando cache")
                 os.remove(".cache")
             except FileNotFoundError:
-                pass
+                st.write("No se encontro el archivo")
             check_autorization, display_name = authorization(client_id, client_secret, re_direct_url)
             
             if check_autorization:
