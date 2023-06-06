@@ -36,5 +36,6 @@ with login:
             if check_autorization:
                 switch_page("homepage")
             else:
+                st.error(display_name)
                 st.markdown('<p class="message-home"> Error de los datos</p>', unsafe_allow_html=True)
                 
